@@ -27,6 +27,9 @@
   <link id="color-scheme" rel="stylesheet" href="css/colors/main-darkgreen.css">
   <!-- Custom CSS (Add your custom CSS styles to this file)-->
   <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
   <!-- removeIf(customizerDist)-->
   <link rel="stylesheet" href="../customizer/main.css">
   <!-- endremoveIf(customizerDist)-->
@@ -656,18 +659,49 @@
               <div class="row">
                 <!-- Contact form-->
                 <div class="col-12 col-lg-7">
-                  <form class="contact-form" id="contact-form" action="http://exill.dk/demo/kitzu/template/php/contact.php">
-                    <h4 class="content-title">Message Me</h4>
-                    <div class="row">
-                      <div class="col-12 col-md-6 form-group"><input class="form-control" id="contact-name" type="text" name="name" placeholder="Name" required=""></div>
-                      <div class="col-12 col-md-6 form-group"><input class="form-control" id="contact-email" type="email" name="email" placeholder="Email" required=""></div>
-                      <div class="col-12 form-group"><input class="form-control" id="contact-subject" type="text" name="subject" placeholder="Subject" required=""></div>
-                      <div class="col-12 form-group form-message"><textarea class="form-control" id="contact-message" name="message" placeholder="Message" rows="5" required=""></textarea></div>
-                      <div class="col-12 form-submit"><button class="btn button-main button-scheme" id="contact-submit" type="submit">Send Message</button>
-                        <p class="contact-feedback"></p>
-                      </div>
-                    </div>
-                  </form>
+                  <form class="gform pure-form pure-form-stacked" method="POST" data-email="ThuLienHe@email.net"
+  action="https://script.google.com/macros/s/AKfycbygGE7X-4oPiazldaa0wfKQd9mmgBW6xJFb1obJWm1jiJVkWfm3dH-x/exec">
+    <!-- change the form action to your script url -->
+
+    <div class="form-elements">
+      <fieldset class="pure-group">
+        <label for="name">Name: </label>
+        <input id="name" name="name" placeholder="Tên thường gọi của bạn" />
+      </fieldset>
+
+      <fieldset class="pure-group">
+        <label for="message">Message: </label>
+        <textarea id="message" name="message" rows="10"
+        placeholder="Bạn nghĩ sao...?"></textarea>
+      </fieldset>
+
+      <fieldset class="pure-group">
+        <label for="email"><em>Your</em> Email Address:</label>
+        <input id="email" name="email" type="email" value=""
+        required placeholder="email của bạn"/>
+      </fieldset>
+
+      <fieldset class="pure-group">
+        <label for="color">Favourite Color: </label>
+        <input id="color" name="color" placeholder="green" />
+      </fieldset>
+
+      <fieldset class="pure-group honeypot-field">
+        <label for="honeypot">To help avoid spam, utilize a Honeypot technique with a hidden text field; must be empty to submit the form! Otherwise, we assume the user is a spam bot.</label>
+        <input id="honeypot" type="text" name="honeypot" value="" />
+      </fieldset>
+
+      <button class="button-success pure-button button-xlarge">
+        <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+    </div>
+
+    <!-- Customise the Thankyou Message People See when they submit the form: -->
+    <div class="thankyou_message" style="display:none;">
+      <h2><em>Thanks</em> for contacting us!
+        We will get back to you soon!</h2>
+    </div>
+
+  </form>
                 </div>
                 <!-- Contact info-->
                 <div class="col-12 col-lg-5">
@@ -763,6 +797,8 @@
   <script src="js/main.js"></script>
   <!-- Custom JS (Add your custom JS scripts to this file)-->
   <script src="js/custom.js"></script>
+  <script src="js/google-apps-script.js"></script>
+  <script data-cfasync="false" src="js/form-submission-handler.js"></script>
   <!-- removeIf(customizerDist)-->
   <script src="../customizer/main.js"></script>
   <!-- endremoveIf(customizerDist)-->
